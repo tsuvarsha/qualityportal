@@ -7,7 +7,7 @@
         <content>
             <VBox class="sapUiSmallMargin" justifyContent="Center" alignItems="Center" height="100%">
                 <items>
-                    <Image src="" width="100px" class="sapUiSmallMarginBottom" />
+                    <Avatar src="sap-icon://action-settings" displaySize="XL" class="sapUiSmallMarginBottom" />
                     <Title text="Quality Engineer Login" level="H2" class="sapUiSmallMarginBottom" />
                     <VBox width="300px">
                         <Label text="User ID" />

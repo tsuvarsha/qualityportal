@@ -112,7 +112,7 @@
       "routes": [
         {
           "name": "Routelogin",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": [
             "Targetlogin"
           ]
