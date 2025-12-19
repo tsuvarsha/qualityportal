@@ -1,6 +1,23 @@
 <mvc:View controllerName="project1.controller.login"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form">
+    <Page id="page" title="Quality Portal Login">
+        <content>
+            <VBox class="sapUiSmallMargin" justifyContent="Center" alignItems="Center" height="100%">
+                <items>
+                    <Image src="" width="100px" class="sapUiSmallMarginBottom" />
+                    <Title text="Quality Engineer Login" level="H2" class="sapUiSmallMarginBottom" />
+                    <VBox width="300px">
+                        <Label text="User ID" />
+                        <Input id="usernameInput" placeholder="Enter User ID" />
+                        <Label text="Password" />
+                        <Input id="passwordInput" type="Password" placeholder="Enter Password" />
+                        <Button text="Login" type="Emphasized" press="onLogin" class="sapUiSmallMarginTop" width="100%" />
+                    </VBox>
+                </items>
+            </VBox>
+        </content>
     </Page>
 </mvc:View>

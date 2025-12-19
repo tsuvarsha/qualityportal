@@ -1,0 +1,25 @@
+<mvc:View controllerName="project1.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="dashboardPage" title="Dashboard">
+        <content>
+            <TileContainer>
+                <GenericTile header="Inspection Lot" subheader="Manage Lots" press="onPressInspectionLot" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                    <TileContent>
+                        <ImageContent src="sap-icon://lab" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile header="Result Records" subheader="Record Results" press="onPressResultRecords" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                   <TileContent>
+                        <ImageContent src="sap-icon://form" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile header="Usage Decision" subheader="Make Decisions" press="onPressUsageDecision" class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                    <TileContent>
+                        <ImageContent src="sap-icon://accept" />
+                    </TileContent>
+                </GenericTile>
+            </TileContainer>
+        </content>
+    </Page>
+</mvc:View>

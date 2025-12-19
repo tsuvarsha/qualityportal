@@ -33,6 +33,13 @@
           "localUri": "localService/mainService/metadata.xml",
           "odataVersion": "2.0"
         }
+      },
+      "ZINSPECT_TATA_CDS": {
+        "uri": "/sap/opu/odata/sap/ZINSPECT_TATA_CDS/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
       }
     }
   },
@@ -76,6 +83,11 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
+      },
+      "inspection": {
+        "dataSource": "ZINSPECT_TATA_CDS",
+        "preload": true,
+        "settings": {}
       }
     },
     "resources": {
@@ -104,12 +116,45 @@
           "target": [
             "Targetlogin"
           ]
+        },
+        {
+          "name": "Dashboard",
+          "pattern": "dashboard",
+          "target": [
+            "TargetDashboard"
+          ]
+        },
+        {
+          "name": "InspectionLot",
+          "pattern": "inspection",
+          "target": [
+            "TargetInspectionLot"
+          ]
+        },
+        {
+          "name": "Detail",
+          "pattern": "detail/{lotId}",
+          "target": [
+            "TargetDetail"
+          ]
         }
       ],
       "targets": {
         "Targetlogin": {
           "id": "login",
           "name": "login"
+        },
+        "TargetDashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard"
+        },
+        "TargetInspectionLot": {
+          "id": "InspectionLot",
+          "name": "InspectionLot"
+        },
+        "TargetDetail": {
+          "id": "Detail",
+          "name": "Detail"
         }
       }
     },

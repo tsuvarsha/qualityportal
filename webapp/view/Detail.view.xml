@@ -1,0 +1,48 @@
+<mvc:View controllerName="project1.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page id="detailPage" title="Inspection Lot Detail" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <ObjectHeader title="Lot {inspection>InspectionLotNumber}"
+                intro="{inspection>SelectedMaterial}"
+                number="{inspection>ActualQuantity}"
+                numberUnit="{inspection>UnitOfMeasure}">
+                <statuses>
+                    <ObjectStatus text="{inspection>UsageDecisionStatus}" />
+                </statuses>
+                <attributes>
+                    <ObjectAttribute title="Plant" text="{inspection>Plant}" />
+                    <ObjectAttribute title="Loc" text="{inspection>PlantDescription}" />
+                </attributes>
+            </ObjectHeader>
+            
+            <form:SimpleForm title="Result Recording" editable="true">
+                <form:content>
+                    <Label text="Unrestricted Quantity" />
+                    <Input id="unrestrictedInput" type="Number" value="{local>/unrestricted}" liveChange="onQuantityChange" />
+                    
+                    <Label text="Blocked Quantity" />
+                    <Input id="blockedInput" type="Number" value="{local>/blocked}" liveChange="onQuantityChange" />
+                    
+                    <Label text="Production Quantity" />
+                    <Input id="productionInput" type="Number" value="{local>/production}" liveChange="onQuantityChange" />
+                    
+                    <Label text="Total Inspected" />
+                    <Text text="{local>/totalInspected}" />
+                    
+                    <Label text="Status" />
+                    <Text text="{local>/validationMessage}" class="sapUiError" />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button text="Approve" type="Accept" press="onApprove" enabled="{local>/isValid}" />
+                <Button text="Reject" type="Reject" press="onReject" enabled="{local>/isValid}" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

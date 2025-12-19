@@ -1,0 +1,35 @@
+<mvc:View controllerName="project1.controller.InspectionLot"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="inspectionPage" title="Inspection Lots" showNavButton="true" navButtonPress="onNavBack">
+        <Table id="inspectionTable" items="{inspection>/ZINSPECT_TATA}" growing="true" growingThreshold="10">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="Items" level="H2"/>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column><Text text="Lot Number" /></Column>
+                <Column><Text text="Plant" /></Column>
+                <Column><Text text="Material" /></Column>
+                <Column><Text text="Actual Qty" /></Column>
+                <Column><Text text="Inspected Qty" /></Column>
+                <Column><Text text="Status" /></Column>
+                <Column><Text text="Decision Code" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Navigation" press="onPressLot">
+                    <cells>
+                        <Text text="{inspection>InspectionLotNumber}" />
+                        <Text text="{inspection>Plant}" />
+                        <Text text="{inspection>SelectedMaterial}" />
+                        <Text text="{inspection>ActualQuantity} {inspection>UnitOfMeasure}" />
+                        <Text text="{inspection>InspectedQuantity} {inspection>UnitOfMeasure}" />
+                        <Text text="{inspection>UsageDecisionStatus}" />
+                        <ObjectStatus text="{inspection>UsageDecisionCode}" state="{= ${inspection>UsageDecisionCode} === 'A' ? 'Success' : ${inspection>UsageDecisionCode} === 'R' ? 'Error' : 'None' }" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
